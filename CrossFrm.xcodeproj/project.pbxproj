@@ -13,7 +13,18 @@
 		11F6827E1DA295C60018E6AF /* CrossFrm.h in Headers */ = {isa = PBXBuildFile; fileRef = 11F6827C1DA295C60018E6AF /* CrossFrm.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		111EFEA81DAF955F00E8F0CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116452C61DA28FD100936C8A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11F682711DA295A60018E6AF;
+			remoteInfo = CrossFrm;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		111EFEAA1DAF9A2700E8F0CD /* Carthage.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Carthage.xcconfig; sourceTree = "<group>"; };
 		11D58BB31DA2A0B70022F903 /* CrossFrmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrossFrmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D58BB51DA2A0B80022F903 /* CrossFrmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossFrmTests.swift; sourceTree = "<group>"; };
 		11D58BB71DA2A0B80022F903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +56,7 @@
 		116452C51DA28FD100936C8A = {
 			isa = PBXGroup;
 			children = (
+				111EFEAA1DAF9A2700E8F0CD /* Carthage.xcconfig */,
 				11F6827B1DA295C60018E6AF /* Sources */,
 				11D58BB41DA2A0B80022F903 /* CrossFrmTests */,
 				11F682731DA295A60018E6AF /* Products */,
@@ -101,10 +113,12 @@
 				11D58BAF1DA2A0B70022F903 /* Sources */,
 				11D58BB01DA2A0B70022F903 /* Frameworks */,
 				11D58BB11DA2A0B70022F903 /* Resources */,
+				111EFEA71DAF947900E8F0CD /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				111EFEA91DAF955F00E8F0CD /* PBXTargetDependency */,
 			);
 			name = CrossFrmTests;
 			productName = CrossFrmTests;
@@ -184,6 +198,25 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		111EFEA71DAF947900E8F0CD /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				KeychainAccess,
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "case \"$PLATFORM_NAME\" in\nmacosx) plat=Mac;;\niphone*) plat=iOS;;\nwatch*) plat=watchOS;;\ntv*) plat=tvOS;;\n*) echo \"error: Unknown PLATFORM_NAME: $PLATFORM_NAME\"; exit 1;;\nesac\nfor (( n = 0; n < SCRIPT_INPUT_FILE_COUNT; n++ )); do\nVAR=SCRIPT_INPUT_FILE_$n\nframework=$(basename \"${!VAR}\")\nexport SCRIPT_INPUT_FILE_$n=\"$SRCROOT\"/Carthage/Build/$plat/\"$framework\".framework\ndone\n\n/usr/local/bin/carthage copy-frameworks || exit\n\nfor (( n = 0; n < SCRIPT_INPUT_FILE_COUNT; n++ )); do\nVAR=SCRIPT_INPUT_FILE_$n\nsource=${!VAR}.dSYM\ndest=${BUILT_PRODUCTS_DIR}/$(basename \"$source\")\nditto \"$source\" \"$dest\" || exit\ndone";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		11D58BAF1DA2A0B70022F903 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -203,9 +236,18 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		111EFEA91DAF955F00E8F0CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11F682711DA295A60018E6AF /* CrossFrm */;
+			targetProxy = 111EFEA81DAF955F00E8F0CD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		116452CA1DA28FD100936C8A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 111EFEAA1DAF9A2700E8F0CD /* Carthage.xcconfig */;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -219,6 +261,7 @@
 		};
 		116452CB1DA28FD100936C8A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 111EFEAA1DAF9A2700E8F0CD /* Carthage.xcconfig */;
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -274,7 +317,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks @loader_path/../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cososys.CrossFrmTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -381,7 +423,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cososys.CrossFrm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

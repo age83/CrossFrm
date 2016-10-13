@@ -27,6 +27,17 @@ class CrossFrmTests: XCTestCase {
 
         XCTAssertEqual(7, Utils.lenght(ofText: "testing"))
     }
+
+    func testKeychain() {
+
+        let value1 = Utils.testKeychain()
+        let components1 = value1.components(separatedBy: ":")
+
+        let value2 = Utils.testKeychain()
+        let components2 = value2.components(separatedBy: ":")
+
+        XCTAssertEqual(components1[1], components2[1])
+    }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
