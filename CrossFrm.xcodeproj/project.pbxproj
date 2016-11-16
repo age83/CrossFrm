@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		119B41DC1DDCA41500E9167F /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B41DB1DDCA41500E9167F /* Action.swift */; };
 		11D06F871DA7BA3300E462DD /* CrossFrm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11F682721DA295A60018E6AF /* CrossFrm.framework */; };
 		11D58BB61DA2A0B80022F903 /* CrossFrmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D58BB51DA2A0B80022F903 /* CrossFrmTests.swift */; };
 		11D58BBC1DA2A4CC0022F903 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D58BBB1DA2A4CC0022F903 /* Utils.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		111EFEAA1DAF9A2700E8F0CD /* Carthage.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Carthage.xcconfig; sourceTree = "<group>"; };
+		119B41DB1DDCA41500E9167F /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		11D58BB31DA2A0B70022F903 /* CrossFrmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrossFrmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D58BB51DA2A0B80022F903 /* CrossFrmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossFrmTests.swift; sourceTree = "<group>"; };
 		11D58BB71DA2A0B80022F903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				11F6827C1DA295C60018E6AF /* CrossFrm.h */,
 				11D58BBB1DA2A4CC0022F903 /* Utils.swift */,
 				11F6827D1DA295C60018E6AF /* Info.plist */,
+				119B41DB1DDCA41500E9167F /* Action.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -149,7 +152,7 @@
 		116452C61DA28FD100936C8A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				TargetAttributes = {
 					11D58BB21DA2A0B70022F903 = {
 						CreatedOnToolsVersion = 8.0;
@@ -231,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11D58BBC1DA2A4CC0022F903 /* Utils.swift in Sources */,
+				119B41DC1DDCA41500E9167F /* Action.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +253,27 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 111EFEAA1DAF9A2700E8F0CD /* Carthage.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvsimulator appletvos watchsimulator watchos macosx";
 				TARGETED_DEVICE_FAMILY = "1,2,3,4";
 				TVOS_DEPLOYMENT_TARGET = 9.2;
@@ -263,6 +285,23 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 111EFEAA1DAF9A2700E8F0CD /* Carthage.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvsimulator appletvos watchsimulator watchos macosx";
