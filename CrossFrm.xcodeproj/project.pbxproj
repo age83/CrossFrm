@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11884C5E1E5DD40200E448C7 /* OnlySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11884C5D1E5DD40200E448C7 /* OnlySwift.swift */; };
+		11884C601E5DD44E00E448C7 /* SwiftFromNSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11884C5F1E5DD44E00E448C7 /* SwiftFromNSObject.swift */; };
 		119B41DC1DDCA41500E9167F /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119B41DB1DDCA41500E9167F /* Action.swift */; };
 		11D06F871DA7BA3300E462DD /* CrossFrm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11F682721DA295A60018E6AF /* CrossFrm.framework */; };
 		11D58BB61DA2A0B80022F903 /* CrossFrmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D58BB51DA2A0B80022F903 /* CrossFrmTests.swift */; };
@@ -26,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		111EFEAA1DAF9A2700E8F0CD /* Carthage.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Carthage.xcconfig; sourceTree = "<group>"; };
+		11884C5D1E5DD40200E448C7 /* OnlySwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlySwift.swift; sourceTree = "<group>"; };
+		11884C5F1E5DD44E00E448C7 /* SwiftFromNSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftFromNSObject.swift; sourceTree = "<group>"; };
 		119B41DB1DDCA41500E9167F /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		11D58BB31DA2A0B70022F903 /* CrossFrmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrossFrmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D58BB51DA2A0B80022F903 /* CrossFrmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossFrmTests.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 				11D58BBB1DA2A4CC0022F903 /* Utils.swift */,
 				11F6827D1DA295C60018E6AF /* Info.plist */,
 				119B41DB1DDCA41500E9167F /* Action.swift */,
+				11884C5D1E5DD40200E448C7 /* OnlySwift.swift */,
+				11884C5F1E5DD44E00E448C7 /* SwiftFromNSObject.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -233,8 +239,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11884C5E1E5DD40200E448C7 /* OnlySwift.swift in Sources */,
 				11D58BBC1DA2A4CC0022F903 /* Utils.swift in Sources */,
 				119B41DC1DDCA41500E9167F /* Action.swift in Sources */,
+				11884C601E5DD44E00E448C7 /* SwiftFromNSObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
