@@ -10,6 +10,9 @@ import Foundation
 
 public class OnlySwift {
 
+    public init() {
+    }
+
     public func lenght(ofText text: String) -> Int {
 
         return text.characters.count
